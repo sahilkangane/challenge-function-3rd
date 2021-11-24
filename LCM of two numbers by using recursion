@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+int lcm(int,int);
+void main()
+
+{
+	int x,y,result;
+	printf("\nEnter two number to find LCM : ");
+	scanf("%d%d",&x,&y);
+	
+	result=lcm(x,y);
+	printf("\nThe LCM of %d and %d is %d",x,y,result);
+	getch();
+}
+
+int lcm(int x,int y )
+{
+	static int common=1;
+	if(common%x==0 && common%y==0)
+	return common;
+	common++;
+	
+	lcm(x,y);
+	return common;
+}
